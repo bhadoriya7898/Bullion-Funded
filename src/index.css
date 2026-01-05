@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+html,
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: #10190D;
+}
+
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+
+@keyframes testimonialScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-testimonial-scroll {
+  animation: testimonialScroll 10s linear infinite;
+}
+
+
+
+/* ================= CERTIFICATE AUTO SCROLL ================= */
+
+@keyframes certificateScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* half width because we duplicated the array */
+    transform: translateX(-50%);
+  }
+}
+
+.animate-certificate-scroll {
+  animation: certificateScroll 35s linear infinite;
+}
+
+
+
+@keyframes softGlow {
+  0% {
+    box-shadow: 0 0 25px rgba(130, 243, 82, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(130, 243, 82, 0.28);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(130, 243, 82, 0.18);
+  }
+}
