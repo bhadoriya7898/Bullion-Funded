@@ -1,7 +1,7 @@
 import { useState, useRef, useLayoutEffect } from "react";
 import { FEATURES, PLAN_DATA } from "./challengePlans";
 import checkIcon from "../../assets/images/correctsign.png";
-
+import { Link } from "react-router-dom";
 const plans = ["X-Challenge", "Evaluation", "Express", "X-lite Challenge"];
 
 const addons = [
@@ -117,9 +117,12 @@ const ChallengeComparison = () => {
         )}
 
         {/* ================= HEADING ================= */}
-        <h3 className="mt-10 text-white text-[18px] md:text-[20px] font-bold underline text-center">
-          Compare your challenges
-        </h3>
+        
+<Link to="/compare-challenges">
+  <h3 className="mt-10 text-white text-[18px] md:text-[20px] font-bold underline text-center cursor-pointer">
+    Compare your challenges
+  </h3>
+</Link>
 
         {/* ================= TABLE (RESPONSIVE) ================= */}
         <div className="mt-6 w-full overflow-x-auto">
