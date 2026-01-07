@@ -52,7 +52,7 @@ const FAQ = () => {
           <div className="bg-white rounded-[24px] px-8 py-10 text-center">
             <img src={faqQst} className="mx-auto mb-6 w-[90px]" />
             <h3 className="text-[24px] font-bold mb-4">FAQ</h3>
-            <p className="text-[17px] text-black-700 leading-relaxed font-bold">
+            <p className="text-[17px] text-black-700 leading-relaxed font-semi-bold">
               Check out our frequently asked questions below to find the
               information you need. If you need further help, feel free
               to contact us!
@@ -65,7 +65,7 @@ const FAQ = () => {
             <h3 className="text-[24px] font-bold mb-4 text-black">
               Support Request
             </h3>
-            <p className="text-[17px] text-black leading-relaxed font-bold">
+            <p className="text-[17px] text-black leading-relaxed font-semi-bold">
               Our dedicated team is ready to assist you anytime, with an
               average response time of just 60 seconds. Reach out whenever
               you need help, and we’ll be there to support you!
@@ -76,7 +76,7 @@ const FAQ = () => {
           <div className="bg-white rounded-[24px] px-8 py-10 text-center">
             <img src={faqEmail} className="mx-auto mb-6 w-[90px]" />
             <h3 className="text-[24px] font-bold mb-4">Email Us!</h3>
-            <p className="text-[17px] text-black-700 leading-relaxed font-bold">
+            <p className="text-[17px] text-black-700 leading-relaxed font-semi-bold">
               We welcome new ideas, suggestions, and affiliate partnerships.
               Reach out today and let’s explore exciting opportunities
               together!

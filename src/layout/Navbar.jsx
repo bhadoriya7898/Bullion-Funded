@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/logo's/navbarlogo.png";
 import arrow from "../assets/arrows/downarrow.png";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -21,11 +21,14 @@ const Navbar = () => {
       <nav className="w-full max-w-[1307px] h-[58px] flex items-center justify-between px-4 lg:px-0">
 
         {/* LOGO */}
-        <img
-          src={logo}
-          alt="Bullion Founded"
-          className="h-full object-contain"
-        />
+        
+        <Link to="/">
+  <img
+    src={logo}
+    alt="Bullion Founded"
+    className="h-[36px] md:h-[45px] object-contain cursor-pointer"
+  />
+</Link>
 
         {/* ================= DESKTOP NAV ================= */}
         <div className="hidden lg:flex items-center gap-[85px]">
