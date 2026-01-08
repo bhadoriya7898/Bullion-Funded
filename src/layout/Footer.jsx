@@ -89,8 +89,8 @@ const Footer = () => {
               <div className="flex flex-col gap-4">
                 <h4 className="text-white text-[18px] font-bold">Models</h4>
                 <ul className="flex flex-col gap-3 text-[15px] text-white/90">
-                  <li><Link to="/models/express">Express Model</Link></li>
-                  <li><Link to="/models/evaluation">Evaluation Model</Link></li>
+                  <li><Link to="/express">Express Model</Link></li>
+                  <li><Link to="/evaluation">Evaluation Model</Link></li>
                   <li><Link to="/x-challenge">X Challenge</Link></li>
                 </ul>
               </div>

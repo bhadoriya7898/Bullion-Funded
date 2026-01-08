@@ -1,11 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import { useState, useRef, useLayoutEffect } from "react";
 import ComparisonTable from "../component/ComparisonTable";
 
-/* =====================================================
-   Assets used on this page
-   (videos, backgrounds, icons)
-===================================================== */
 import graphVideo from "../assets/videos/x-challemge-graph.mp4";
 import rulesBg from "../assets/images/x-challenge-bg.png";
 
@@ -13,25 +8,17 @@ import rule1 from "../assets/images/modelrule1.png";
 import rule2 from "../assets/images/modelrule2.png";
 import rule3 from "../assets/images/modelrule3.png";
 import rule4 from "../assets/images/modelrule4.png";
-
+import { useNavigate, useLocation } from "react-router-dom";
 import rewardBg from "../assets/images/guarranteedrewardbg.png";
 import rewardImg from "../assets/images/untitled.png";
 
 const XChallenge = () => {
   const navigate = useNavigate();
-
-  /* ---------------------------------------------
-     State for plan toggle & step selection
-     - activePlan: Bullionaire / Lite
-     - activeStep: 1 Step / 2 Step
-  --------------------------------------------- */
-  const [activePlan, setActivePlan] = useState("bullionaire");
+  const location = useLocation();
+  const isActive = (path) => location.pathname === path;
+  const [activePlan, setActivePlan] = useState("x-challenge");
   const [activeStep, setActiveStep] = useState(1);
 
-  /* ---------------------------------------------
-     Slider logic for plan toggle
-     (slider adjusts itself to text width)
-  --------------------------------------------- */
   const tabsWrapperRef = useRef(null);
   const tabRefs = useRef({});
   const [sliderStyle, setSliderStyle] = useState({
@@ -156,11 +143,6 @@ const XChallenge = () => {
   return (
     <main className="bg-[#090909] text-white overflow-x-hidden font-['Helvetica_Neue']">
 
-      {/* =====================================================
-         HERO SECTION
-         Left: text + CTA
-         Right: animated graph video
-      ===================================================== */}
       <section className="max-w-[1240px] mx-auto px-4 pt-[80px] md:pt-[100px]
                           grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
@@ -182,37 +164,60 @@ const XChallenge = () => {
             <span className="text-[#E6E6E6]">in the Industry</span>
           </h1>
 
-          <p className="mt-6 max-w-[426px] text-[13px] sm:text-[16px]
+          <p className="mt-6 max-w-[426px] text-[18px] sm:text-[18px] lg:text-[18px]
                         font-medium leading-[120%] text-white/90">
             Trade with no time limits and earn up to 95% profit split with the
             best challenge in the industry, the Bullion Funded Bullionaire
             Challenge.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4
-                          text-[13px] sm:text-[18px] font-medium">
-            <button className="text-[#82F352]">
-              Bullionaire Challenge Model
-            </button>
+<div
+  className="
+    mt-8
+    flex flex-wrap items-center
+    gap-3 sm:gap-4
+    text-[18px] sm:text-[18px] lg:text-[18px]
+    font-medium
+  "
+>
+  <button
+    onClick={() => navigate("/x-challenge")}
+    className={`transition whitespace-normal text-left ${
+      isActive("/x-challenge")
+        ? "text-[#82F352] font-semibold"
+        : "text-white/80 hover:text-[#82F352]"
+    }`}
+  >
+    Bullionaire Challenge Model
+  </button>
 
-            <div className="w-px h-[14px] bg-white hidden sm:block" />
+  <div className="w-px h-[16px] bg-white hidden sm:block" />
 
-            <button
-              onClick={() => navigate("/models/evaluation")}
-              className="text-white/80 hover:text-[#82F352]"
-            >
-              Evaluation Model
-            </button>
+  <button
+    onClick={() => navigate("/evaluation")}
+    className={`transition whitespace-normal text-left ${
+      isActive("/evaluation")
+        ? "text-[#82F352] font-semibold"
+        : "text-white/80 hover:text-[#82F352]"
+    }`}
+  >
+    Evaluation Model
+  </button>
 
-            <div className="w-px h-[14px] bg-white hidden sm:block" />
+  <div className="w-px h-[16px] bg-white hidden sm:block" />
 
-            <button
-              onClick={() => navigate("/models/express")}
-              className="text-white/80 hover:text-[#82F352]"
-            >
-              Express Model
-            </button>
-          </div>
+  <button
+    onClick={() => navigate("/express")}
+    className={`transition whitespace-normal text-left ${
+      isActive("/express")
+        ? "text-[#82F352] font-semibold"
+        : "text-white/80 hover:text-[#82F352]"
+    }`}
+  >
+    Express Model
+  </button>
+</div>
+
 
           <button className="mt-8 sm:mt-10 px-8 sm:px-10 py-3 sm:py-4
                              rounded-full bg-[#82F352]
@@ -312,7 +317,7 @@ const XChallenge = () => {
     ref={(el) => (tabRefs.current["bullionaire"] = el)}
     onClick={() => setActivePlan("bullionaire")}
     className={`relative z-10 px-5 cursor-pointer
-                text-[14px] sm:text-[20px] whitespace-nowrap
+                text-[18px] sm:text-[18px] lg:text-[18px] whitespace-nowrap
                 ${
                   activePlan === "bullionaire"
                     ? "text-white"
@@ -327,7 +332,7 @@ const XChallenge = () => {
     ref={(el) => (tabRefs.current["lite"] = el)}
     onClick={() => setActivePlan("lite")}
     className={`relative z-10 px-5 cursor-pointer
-                text-[14px] sm:text-[20px] whitespace-nowrap
+                text-[18px] sm:text-[18px] lg:text-[18px] whitespace-nowrap
                 ${
                   activePlan === "lite"
                     ? "text-white"
@@ -341,13 +346,13 @@ const XChallenge = () => {
 
               {/* STEP SELECTOR */}
               <div className="flex items-center gap-4 h-[28px]">
-                <span className="font-bold">Select Preference</span>
+                <span className="font-bold text-[18px] sm:text-[18px] lg:text-[18px]">Select Preference</span>
                 {[1, 2].map((step) => (
                   <button
                     key={step}
                     onClick={() => setActiveStep(step)}
                     className={`w-[75px] h-[28px] rounded-[30px]
-                                flex items-center justify-center transition
+                                flex items-center justify-center transition text-[18px] sm:text-[18px] lg:text-[18px]
                                 ${activeStep === step
                                   ? "bg-[#82F352] text-black"
                                   : "text-white hover:bg-white/10"}`}
