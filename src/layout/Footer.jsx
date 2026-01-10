@@ -2,7 +2,7 @@ import footerBg from "../assets/Footer/footerbg.png";
 import facebookIcon from "../assets/Footer/facebook.png";
 import instagramIcon from "../assets/Footer/instagram-solid.png";
 import youtubeIcon from "../assets/Footer/youtube.png";
-import ProfitxLogo from "../assets/Footer/Profitx.png";
+import ProfitxLogo from "../assets/Footer/ProfitX.png";
 
 import { FaUser, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
