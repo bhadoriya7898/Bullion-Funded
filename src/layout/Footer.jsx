@@ -2,7 +2,7 @@ import footerBg from "../assets/Footer/footerbg.png";
 import facebookIcon from "../assets/Footer/facebook.png";
 import instagramIcon from "../assets/Footer/instagram-solid.png";
 import youtubeIcon from "../assets/Footer/youtube.png";
-import ProfitxLogo from "../assets/Footer/ProfitX.png";
+
 
 import { FaUser, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
@@ -53,10 +53,10 @@ const Footer = () => {
       {/* ======================================================
           SECTION 2: MAIN FOOTER
       ====================================================== */}
-      <footer
-        className="w-full bg-cover bg-center py-16 px-6"
-        style={{ backgroundImage: `url(${footerBg})` }}
-      >
+<footer
+  className="w-full bg-cover bg-center py-16 px-6"
+  style={{ backgroundImage: "url('/images/ProfitX.png')" }}
+>
         <div className="max-w-[1240px] mx-auto flex flex-col lg:flex-row gap-14">
 
           {/* ================= LEFT ================= */}
