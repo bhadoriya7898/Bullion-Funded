@@ -2,6 +2,7 @@ import { useState, useRef, useLayoutEffect } from "react";
 import { FEATURES, PLAN_DATA } from "./challengePlans";
 import checkIcon from "../../assets/images/correctsign.png";
 import { Link } from "react-router-dom";
+
 const plans = ["X-Challenge", "Evaluation", "Express", "X-lite Challenge"];
 
 const addons = [
@@ -16,7 +17,7 @@ const ChallengeComparison = () => {
   const [activePlan, setActivePlan] = useState(0);
   const [activeStep, setActiveStep] = useState("step1");
 
-  /* ---------------- PLAN SELECTOR PILL ---------------- */
+  /* ================= PLAN SELECTOR PILL ================= */
   const tabsWrapperRef = useRef(null);
   const tabRefs = useRef([]);
   const [pillStyle, setPillStyle] = useState({ width: 0, left: 0 });
@@ -36,7 +37,7 @@ const ChallengeComparison = () => {
     });
   }, [activePlan]);
 
-  /* ---------------- DATA ---------------- */
+  /* ================= DATA ================= */
   const planKey =
     activePlan === 0
       ? "x-challenge"
@@ -57,7 +58,7 @@ const ChallengeComparison = () => {
 
         {/* ================= PLAN SELECTOR ================= */}
         <div className="w-full max-w-[700px] overflow-x-auto">
-          <div className="relative min-w-max h-[45px] bg-[#82F352] rounded-[44px] flex items-center justify-center px-4">
+          <div className="relative min-w-max h-[45px] bg-[#82F352] rounded-[44px] flex items-center px-4">
             <div ref={tabsWrapperRef} className="relative flex">
 
               <div
@@ -88,7 +89,7 @@ const ChallengeComparison = () => {
           </div>
         </div>
 
-        {/* ================= SELECT PREFERENCE ================= */}
+        {/* ================= STEP SELECT ================= */}
         {activePlan === 0 && (
           <div className="mt-6 flex items-center gap-4 flex-wrap justify-center">
             <span className="text-white text-[16px] md:text-[18px] font-bold">
@@ -116,23 +117,98 @@ const ChallengeComparison = () => {
           </div>
         )}
 
-        {/* ================= HEADING ================= */}
-        
-<Link to="/compare-challenges">
-  <h3 className="mt-10 text-white text-[18px] md:text-[20px] font-bold underline text-center cursor-pointer">
-    Compare your challenges
-  </h3>
-</Link>
+        {/* ================= LINK ================= */}
+        <Link to="/compare-challenges">
+          <h3 className="mt-10 text-white text-[18px] md:text-[20px] font-bold underline text-center cursor-pointer">
+            Compare your challenges
+          </h3>
+        </Link>
 
-        {/* ================= TABLE (RESPONSIVE) ================= */}
-        <div className="mt-6 w-full overflow-x-auto">
+{/* ================= MOBILE VIEW (HORIZONTAL CARDS) ================= */}
+<div className="md:hidden mt-6 w-full overflow-x-auto">
+  <div
+    className="
+      flex gap-4
+      snap-x snap-mandatory
+      overflow-x-auto
+      pb-4
+    "
+  >
+    {data.map((account, colIndex) => (
+      <div
+        key={colIndex}
+        className="
+          min-w-[85%]
+          snap-center
+          bg-[#3B6B29]
+          border border-black
+          rounded-xl
+          p-4
+          flex-shrink-0
+        "
+      >
+        {/* Account Size */}
+        <h4 className="text-center text-white text-[18px] font-bold mb-4">
+          {account.accountSize}
+        </h4>
+
+        {/* Features */}
+        <div className="flex flex-col gap-3">
+          {FEATURES.map((feature) => (
+            <div
+              key={feature.key}
+              className="flex justify-between items-center gap-4"
+            >
+              <span className="text-white text-[14px] opacity-80">
+                {feature.label}
+              </span>
+
+              <span className="text-white text-[14px] font-medium text-right">
+                {typeof account.values[feature.key] === "boolean" ? (
+                  account.values[feature.key] && (
+                    <img
+                      src={checkIcon}
+                      alt="tick"
+                      className="w-[16px] h-[16px]"
+                    />
+                  )
+                ) : (
+                  account.values[feature.key]
+                )}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-5 flex justify-center">
+          <button
+            className="
+              w-[160px] h-[34px]
+              rounded-[60px]
+              bg-[#82F352]
+              text-black text-[14px] font-bold
+              transition hover:bg-[#74DA48]
+            "
+          >
+            Start Challenge
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+        {/* ================= DESKTOP VIEW (TABLE) ================= */}
+        <div className="hidden md:block mt-6 w-full overflow-x-auto">
           <div className="min-w-[1100px] bg-[#090909] border-[2px] border-black flex flex-col gap-[1px]">
 
             {/* HEADER */}
-            <div className="grid grid-cols-[220px_repeat(6,1fr)] md:grid-cols-[273px_repeat(6,1fr)] gap-[1px]">
+            <div className="grid grid-cols-[273px_repeat(6,1fr)] gap-[1px]">
               <div className="h-[58px] bg-[#3B6B29]
                               flex items-center justify-center
-                              text-white text-[18px] md:text-[24px] font-medium
+                              text-white text-[24px] font-medium
                               sticky left-0 z-20">
                 Account Size
               </div>
@@ -142,7 +218,7 @@ const ChallengeComparison = () => {
                   key={i}
                   className="h-[58px] bg-[#3B6B29]
                              flex items-center justify-center
-                             text-white text-[18px] md:text-[24px]"
+                             text-white text-[24px]"
                 >
                   {d.accountSize}
                 </div>
@@ -153,65 +229,37 @@ const ChallengeComparison = () => {
             {FEATURES.map((f) => (
               <div
                 key={f.key}
-                className="grid grid-cols-[220px_repeat(6,1fr)] md:grid-cols-[273px_repeat(6,1fr)] gap-[1px]"
+                className="grid grid-cols-[273px_repeat(6,1fr)] gap-[1px]"
               >
                 <div className="h-[45px] bg-[#3B6B29]
                                 flex items-center pl-3
-                                text-white text-[14px] md:text-[16px]
+                                text-white text-[16px]
                                 sticky left-0 z-10">
                   {f.label}
                 </div>
 
-                {data.map((d, i) => {
-                  const isGreen = i % 2 !== 0;
-                  return (
-                    <div
-                      key={i}
-                      className={`h-[45px]
-                        flex items-center justify-center
-                        text-white text-[14px] md:text-[16px]
-                        ${isGreen ? "bg-[#3B6B29]" : "bg-[#090909]"}`}
-                    >
-                      {typeof d.values[f.key] === "boolean" ? (
-                        d.values[f.key] && (
-                          <img
-                            src={checkIcon}
-                            alt="tick"
-                            className="w-[16px] h-[16px]"
-                          />
-                        )
-                      ) : (
-                        d.values[f.key]
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            ))}
-
-            {/* BUTTON ROW */}
-            <div className="grid grid-cols-[220px_repeat(6,1fr)] md:grid-cols-[273px_repeat(6,1fr)] gap-[1px]">
-              <div className="h-[45px] bg-[#090909] sticky left-0 z-10" />
-
-              {data.map((_, i) => {
-                const isGreen = i % 2 === 0;
-                return (
+                {data.map((d, i) => (
                   <div
                     key={i}
-                    className={`h-[45px]
-                      flex items-center justify-center
-                      ${isGreen ? "bg-[#3B6B29]" : "bg-[#090909]"}`}
+                    className={`h-[45px] flex items-center justify-center
+                      text-white text-[16px]
+                      ${i % 2 ? "bg-[#3B6B29]" : "bg-[#090909]"}`}
                   >
-                    <button className="w-[120px] md:w-[144px] h-[27px
-                      rounded-[60px] bg-[#82F352]
-                      text-black text-[13px] md:text-[14px] font-bold
-                      transition hover:bg-[#74DA48]">
-                      Start Challenge
-                    </button>
+                    {typeof d.values[f.key] === "boolean" ? (
+                      d.values[f.key] && (
+                        <img
+                          src={checkIcon}
+                          alt="tick"
+                          className="w-[16px] h-[16px]"
+                        />
+                      )
+                    ) : (
+                      d.values[f.key]
+                    )}
                   </div>
-                );
-              })}
-            </div>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
 

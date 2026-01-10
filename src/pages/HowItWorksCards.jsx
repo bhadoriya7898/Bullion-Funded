@@ -38,12 +38,12 @@ const HowItWorksSection = () => {
           {/* heading */}
           <h1 className="text-white text-[30px] md:text-[42px] font-bold leading-tight">
             How to Get Started with <br />
-            <span className="text-[#82F352]">Bullion Funded</span>
+            <span className="text-[#82F352]">Profitx Funded</span>
           </h1>
 
           {/* description */}
           <p className="mt-4 text-gray-300 text-[17px] md:text-[19px] leading-relaxed">
-            Kickstart your trading career with Bullion Funded by selecting
+            Kickstart your trading career with Profitx Funded by selecting
             the perfect funding plan for your needs. Pass our evaluation
             process to demonstrate your trading expertise and gain access
             to a funded account. With no personal risk, you can focus on

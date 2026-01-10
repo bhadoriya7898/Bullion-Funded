@@ -2,7 +2,7 @@ import footerBg from "../assets/Footer/footerbg.png";
 import facebookIcon from "../assets/Footer/facebook.png";
 import instagramIcon from "../assets/Footer/instagram-solid.png";
 import youtubeIcon from "../assets/Footer/youtube.png";
-import bullionLogo from "../assets/Footer/Bullion.png";
+import ProfitxLogo from "../assets/Footer/Profitx.png";
 
 import { FaUser, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
@@ -65,8 +65,8 @@ const Footer = () => {
             {/* LOGO */}
             <Link to="/">
               <img
-                src={bullionLogo}
-                alt="Bullion Logo"
+                src={ProfitxLogo}
+                alt="Profitx Logo"
                 className="w-[180px] md:w-[200px] object-contain cursor-pointer"
               />
             </Link>
@@ -146,7 +146,7 @@ const Footer = () => {
               <h3 className="text-black text-[22px] font-bold">Contact</h3>
 
               <div className="flex gap-3 text-black">
-                <FaUser /> info@bullion.com
+                <FaUser /> info@Profitx.com
               </div>
 
               <div className="flex gap-3 text-black">

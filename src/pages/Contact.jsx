@@ -38,12 +38,12 @@ const Contact = () => {
           <h1 className="text-[26px] md:text-[37px] font-bold leading-[110%] text-[#f7f9f7] ">
             Contact Us for <br />
             <span className="text-[#82F352]">
-              Expert Bullion Guidance & Support
+              Expert Profitx Guidance & Support
             </span>
           </h1>
 
           <p className="text-[15px] md:text-[19px] leading-[150%] text-gray-200">
-            Need assistance? The Bullion Funded team is here to help! Reach
+            Need assistance? The Profitx Funded team is here to help! Reach
             out to us for expert guidance or support, and our responsive
             team will typically reply within just 60 seconds. Experience
             seamless communication and exceptional service every step of
@@ -95,7 +95,7 @@ const Contact = () => {
             <div className="flex flex-wrap justify-center md:justify-start gap-10 md:gap-[51px]">
 
               <Info icon={dialIcon} text="+44-7365403025" />
-              <Info icon={mailIcon} text="info@bullionfunded.com" />
+              <Info icon={mailIcon} text="info@Profitxfunded.com" />
               <Info
                 icon={locationIcon}
                 text={

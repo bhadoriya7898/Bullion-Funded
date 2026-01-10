@@ -5,13 +5,13 @@ const CARDS = [
   {
     title: "Extra 20% Profit Share in challenge phase",
     desc:
-      "Bullionfunded is the only proprietary trading firm that provides a 20% profit share from the Challenge Phase profits, allowing you to start earning right away.",
+      "Profitxfunded is the only proprietary trading firm that provides a 20% profit share from the Challenge Phase profits, allowing you to start earning right away.",
     highlighted: false,
   },
   {
     title: "New Trading",
     desc:
-      "Bullionfunded permits news trading, enabling you to capitalize on significant market shifts triggered by high-impact news announcements.",
+      "Profitxfunded permits news trading, enabling you to capitalize on significant market shifts triggered by high-impact news announcements.",
     highlighted: true,
   },
   {
@@ -133,7 +133,7 @@ const KeyHighlights = () => {
             >
               Maximize Your{" "}
               <span className="text-[#82F352]">Trading Success</span>{" "}
-              with BullionFunded.
+              with Profitxfunded.
             </h2>
           </div>
 

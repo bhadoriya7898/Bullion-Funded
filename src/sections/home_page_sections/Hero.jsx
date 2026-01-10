@@ -60,7 +60,7 @@ const Hero = () => {
                   "
                 >
                   <span className="text-[#82F352] font-bold">
-                    Bullion Funded:
+                    Profitx funded:
                   </span>{" "}
                   <span className="font-medium">
                     Trusted Accounts, Highest Payouts, Your Trading Success

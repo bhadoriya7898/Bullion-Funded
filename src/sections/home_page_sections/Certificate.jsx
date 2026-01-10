@@ -28,7 +28,7 @@ const Certificate = () => {
           </div>
 
           <h2 className="text-[24px] md:text-[32px] font-bold text-white leading-tight max-w-[1242px]">
-            Successfully pass our trading challenge and receive a BullionFunded
+            Successfully pass our trading challenge and receive a ProfitxFunded
             certificate, including both challenge completion and payout
             certification
           </h2>

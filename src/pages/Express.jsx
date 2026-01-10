@@ -48,7 +48,7 @@ const Express = () => {
       icon: card5,
       title: "Up to 90% Profit Sharing",
       description:
-        "After getting the Bullion Funded Account, you start with an 80% profit split to begin with. And when you become eligible for the scale-up plan, your profit share will increase to 90%.",
+        "After getting the Profitx Funded Account, you start with an 80% profit split to begin with. And when you become eligible for the scale-up plan, your profit share will increase to 90%.",
     },
     {
       icon: card6,
@@ -145,7 +145,7 @@ const Express = () => {
           >
             Your goal in this model will be to prove your trading ability in 2
             phases with very realistic profit targets. Once you achieve the
-            targets, you will start trading on Bullion Funded Account with an
+            targets, you will start trading on Profitx Funded Account with an
             80% profit split. The profit split percentage can be increased all
             the way up to 90% based on your performance.
           </p>
@@ -167,7 +167,7 @@ const Express = () => {
                   : "text-white/80 hover:text-[#82F352]"
               }`}
             >
-              Bullionaire Challenge Model
+              Profitxaire Challenge Model
             </button>
 
             <div className="w-px h-[16px] bg-white hidden sm:block" />
@@ -328,7 +328,7 @@ const Express = () => {
         <div className="transform rotate-180 max-w-[1240px] mx-auto px-4 py-20 sm:py-28">
           {/* HEADING */}
           <h2 className="text-right text-[24px] sm:text-[36px] lg:text-[42px] font-bold mb-14">
-            Why Choose Bullion Funded <br /> as Your Prop Firm?
+            Why Choose Profitx Funded <br /> as Your Prop Firm?
           </h2>
 
           {/* CARDS GRID — RESPONSIVE WIDTH */}
@@ -345,7 +345,7 @@ const Express = () => {
           >
             {[
               { icon: card1, title: "Trade with up to $200K" },
-              { icon: card2, title: "Bullion Funded Pro Support" },
+              { icon: card2, title: "Profitx Funded Pro Support" },
               { icon: card3, title: "Reset Top-up" },
               { icon: card4, title: "Fastest Reward" },
               { icon: card5, title: "Trader-Friendly Leverage" },

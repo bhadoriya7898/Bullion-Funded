@@ -11,42 +11,42 @@ const testimonials = [
     role: "Marketing Coordinator",
     image: user1,
     content:
-      "I've been investing in a bullion-funded company for the past year, and it’s been an incredibly rewarding experience. The transparency and security provided by the company have given me confidence in my investments.",
+      "I've been investing in a Profitx-funded company for the past year, and it’s been an incredibly rewarding experience. The transparency and security provided by the company have given me confidence in my investments.",
   },
   {
     name: "Jane Cooper",
     role: "Marketing Coordinator",
     image: user2,
     content:
-      "I've been investing in a bullion-funded company for the past year, and it’s been an incredibly rewarding experience. The transparency and security provided by the company have given me confidence in my investments.",
+      "I've been investing in a Profitx-funded company for the past year, and it’s been an incredibly rewarding experience. The transparency and security provided by the company have given me confidence in my investments.",
   },
   {
     name: "Guy Hawkins",
     role: "Marketing Coordinator",
     image: user3,
     content:
-      "I've been investing in a bullion-funded company for the past year, and it’s been an incredibly rewarding experience. The transparency and security provided by the company have given me confidence in my investments.",
+      "I've been investing in a Profitx-funded company for the past year, and it’s been an incredibly rewarding experience. The transparency and security provided by the company have given me confidence in my investments.",
   },
   {
     name: "Ralph Edwards",
     role: "Marketing Coordinator",
     image: user4,
     content:
-      "I've been investing in a bullion-funded company for the past year, and it’s been an incredibly rewarding experience. The transparency and security provided by the company have given me confidence in my investments.",
+      "I've been investing in a Profitx-funded company for the past year, and it’s been an incredibly rewarding experience. The transparency and security provided by the company have given me confidence in my investments.",
   },
   {
     name: "Theresa Webb",
     role: "Marketing Coordinator",
     image: user5,
     content:
-      "I've been investing in a bullion-funded company for the past year, and it’s been an incredibly rewarding experience. The transparency and security provided by the company have given me confidence in my investments.",
+      "I've been investing in a Profitx-funded company for the past year, and it’s been an incredibly rewarding experience. The transparency and security provided by the company have given me confidence in my investments.",
   },
   {
     name: "Wade Warren",
     role: "Marketing Coordinator",
     image: user6,
     content:
-      "I've been investing in a bullion-funded company for the past year, and it’s been an incredibly rewarding experience. The transparency and security provided by the company have given me confidence in my investments.",
+      "I've been investing in a Profitx-funded company for the past year, and it’s been an incredibly rewarding experience. The transparency and security provided by the company have given me confidence in my investments.",
   },
 ];
 

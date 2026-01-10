@@ -20,12 +20,12 @@ const reviews = [
     time: "3 Days ago",
     title: "Come to see your dream house…",
     text:
-      "Bullionfunded transformed my trading journey. Clear rules, fast support, and reliable funding process overall.",
+      "Profitxfunded transformed my trading journey. Clear rules, fast support, and reliable funding process overall.",
   },
   {
     name: "Aqib Siddique",
     time: "3 Days ago",
-    title: "Bullionfunded is awesome…",
+    title: "Profitxfunded is awesome…",
     text:
       "I passed my evaluation smoothly. Support was fast and account credentials were delivered quickly. Amazing experience.",
   },

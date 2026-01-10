@@ -25,7 +25,7 @@ const Navbar = () => {
         <Link to="/">
   <img
     src={logo}
-    alt="Bullion Founded"
+    alt="Profitx Founded"
     className="h-[36px] md:h-[45px] object-contain cursor-pointer"
   />
 </Link>

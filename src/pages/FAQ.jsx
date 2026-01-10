@@ -7,8 +7,8 @@ import faqSupport from "../assets/images/FAQcustomercare.png";
 
 const faqList = [
   {
-    q: "Is Bullionfunded regulated?",
-    a: "Bullion funded is a registered trademark in the UAE and is officially based in Ajman, UAE. It operates under a distinctive framework and is not subject to conventional financial regulations. It's important to note that Bullion funded doesn't handle client funds or conduct trading on behalf of the public. Due to this unique aspect, the usual regulatory requirements for firms dealing with client funds or providing trading services to the general public don't apply to Bullion Funded.",
+    q: "Is Profitxfunded regulated?",
+    a: "Profitx funded is a registered trademark in the UAE and is officially based in Ajman, UAE. It operates under a distinctive framework and is not subject to conventional financial regulations. It's important to note that Profitx funded doesn't handle client funds or conduct trading on behalf of the public. Due to this unique aspect, the usual regulatory requirements for firms dealing with client funds or providing trading services to the general public don't apply to Profitx Funded.",
   },
   {
     q: "How do I claim the 20% Profit Share?",

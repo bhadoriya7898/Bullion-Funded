@@ -12,7 +12,7 @@ const STEPS = [
   {
     step: "Step 2",
     title: "Get Verified",
-    desc: "Clear the BullionFunded phases, prove your trading skill, and unlock certification and payout eligibility.",
+    desc: "Clear the Profitxfunded phases, prove your trading skill, and unlock certification and payout eligibility.",
   },
   {
     step: "Step 3",

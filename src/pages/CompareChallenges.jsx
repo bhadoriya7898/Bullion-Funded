@@ -1,9 +1,10 @@
 import checkIcon from "../assets/images/correctsign.png";
-import tableLogo from "../assets/images/bullionTableLogo.png";
 import wrongIcon from "../assets/images/wrongsign.png";
+import tableLogo from "../assets/images/ProfitxTableLogo.png";
+
 const plans = [
-  "Bullionaire",
-  "Bullionaire Lite",
+  "Profitxaire",
+  "Profitxaire Lite",
   "Evaluation",
   "Express",
 ];
@@ -138,30 +139,85 @@ const CompareChallenges = () => {
           Compare All Challenges
         </h1>
 
-        <div className="w-full overflow-x-auto">
+{/* ================= MOBILE VIEW – HORIZONTAL CLEAN CARDS ================= */}
+<div className="md:hidden w-full overflow-x-auto">
+  <div className="flex gap-5 snap-x snap-mandatory pb-5 no-scrollbar">
+
+    {DATA.map((plan, index) => (
+      <div
+        key={index} 
+        className="
+          min-w-[88%] snap-center flex-shrink-0
+          rounded-2xl
+          border border-[#82F352]
+          bg-gradient-to-b from-[#3B6B29] to-[#1E3314]
+          shadow-[0_0_30px_rgba(130,243,82,0.25)]
+          p-4
+        "
+      >
+        {/* CARD HEADER */}
+        <div className="mb-4 pb-3 border-b border-[#82F352]/40 text-center">
+          <h3 className="text-white text-[18px] font-bold">
+            {plans[index]}
+          </h3>
+          <p className="text-white/70 text-[13px] mt-1">
+            {plan.accountSize}
+          </p>
+        </div>
+
+        {/* ROWS (NO BORDERS) */}
+        <div className="flex flex-col gap-2">
+          {FEATURES.map((feature) => {
+            const value = plan.values[feature.key];
+            return (
+              <div
+                key={feature.key}
+                className="flex justify-between items-start gap-4"
+              >
+                {/* LABEL */}
+                <span className="text-white/80 text-[13px] leading-snug">
+                  {feature.label}
+                </span>
+
+                {/* VALUE */}
+                <span className="text-white text-[13px] font-medium text-right">
+                  {typeof value === "boolean" ? (
+                    <img
+                      src={value ? checkIcon : wrongIcon}
+                      alt="status"
+                      className="w-[16px] h-[16px]"
+                    />
+                  ) : (
+                    value
+                  )}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    ))}
+
+  </div>
+</div>
+
+
+        {/* ================= DESKTOP VIEW (TABLE – UNCHANGED) ================= */}
+        <div className="hidden md:block w-full overflow-x-auto">
           <div className="min-w-[1100px] bg-[#090909] border-[2px] border-black flex flex-col gap-[1px]">
 
             {/* HEADER */}
-            <div className="grid grid-cols-[220px_repeat(4,1fr)] md:grid-cols-[273px_repeat(4,1fr)] gap-[1px]">
-             <div
-  className="h-[58px] bg-[#82F352]
-             flex items-center justify-center
-             sticky left-0 z-20"
->
-<img
-  src={tableLogo}
-  alt="Bullion Funded"
-  className="h-[48px] md:h-[48px] w-auto object-contain"
-/>
-</div>
-
+            <div className="grid grid-cols-[273px_repeat(4,1fr)] gap-[1px]">
+              <div className="h-[58px] bg-[#82F352] flex items-center justify-center sticky left-0 z-20">
+                <img src={tableLogo} className="h-[48px]" />
+              </div>
 
               {plans.map((p, i) => (
                 <div
                   key={i}
                   className="h-[58px] bg-[#82F352]
                              flex items-center justify-center
-                             text-black text-[18px] md:text-[20px]"
+                             text-black text-[20px]"
                 >
                   {p}
                 </div>
@@ -172,37 +228,32 @@ const CompareChallenges = () => {
             {FEATURES.map((f) => (
               <div
                 key={f.key}
-                className="grid grid-cols-[220px_repeat(4,1fr)] md:grid-cols-[273px_repeat(4,1fr)] gap-[1px]"
+                className="grid grid-cols-[273px_repeat(4,1fr)] gap-[1px]"
               >
                 <div className="h-[45px] bg-[#3B6B29]
                                 flex items-center pl-3
-                                text-white text-[14px] md:text-[16px]
+                                text-white text-[16px]
                                 sticky left-0 z-10">
                   {f.label}
                 </div>
 
                 {DATA.map((d, i) => {
-                  const isGreen = i % 2 !== 0;
                   const value = d.values[f.key];
-
                   return (
                     <div
                       key={i}
-                      className={`h-[45px]
-                        flex items-center justify-center
-                        text-white text-[14px] md:text-[16px]
-                        ${isGreen ? "bg-[#3B6B29]" : "bg-[#090909]"}`}
+                      className={`h-[45px] flex items-center justify-center
+                        text-white text-[16px]
+                        ${i % 2 ? "bg-[#3B6B29]" : "bg-[#090909]"}`}
                     >
                       {typeof value === "boolean" ? (
-  <img
-    src={value ? checkIcon : wrongIcon}
-    alt={value ? "allowed" : "not allowed"}
-    className="w-[16px] h-[16px]"
-  />
-) : (
-  value
-)}
-
+                        <img
+                          src={value ? checkIcon : wrongIcon}
+                          className="w-[16px] h-[16px]"
+                        />
+                      ) : (
+                        value
+                      )}
                     </div>
                   );
                 })}
@@ -211,6 +262,7 @@ const CompareChallenges = () => {
 
           </div>
         </div>
+
       </div>
     </section>
   );
