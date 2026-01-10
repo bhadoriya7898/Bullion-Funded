@@ -1,6 +1,6 @@
 import checkIcon from "../assets/images/correctsign.png";
 import wrongIcon from "../assets/images/wrongsign.png";
-import tableLogo from "../assets/images/ProfitxTableLogo.png";
+import tableLogo from "../assets/images/ProfitXTableLogo.png";
 
 const plans = [
   "Profitxaire",
