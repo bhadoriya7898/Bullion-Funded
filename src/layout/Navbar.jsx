@@ -11,6 +11,7 @@ const navLinks = [
   { name: "Models", path: "/x-challenge" },
   { name: "FAQ", path: "/faq" },
   { name: "Contact us", path: "/contact" },
+  // {name: "login", path:"login"}
 ];
 
 const Navbar = () => {
@@ -83,11 +84,14 @@ const Navbar = () => {
             <img src={arrow} alt="arrow" className="w-[20px] h-[20px]" />
           </button>
 
-          <button className="h-[48px] px-[20px]
+              <NavLink to={"login"}>
+              <button className="h-[48px] px-[20px]
                              rounded-[10px] bg-[#82F3520D]
                              text-[18px] font-bold text-[#82F352]">
             Login
           </button>
+              </NavLink>
+          
         </div>
 
         {/* ================= MOBILE MENU ICON ================= */}
@@ -123,11 +127,14 @@ const Navbar = () => {
               Platform
             </button>
 
+          <NavLink to={"login"}>
             <button className="h-[48px] rounded-[10px]
                                bg-[#82F3520D]
                                text-[18px] font-bold text-[#82F352]">
               Login
             </button>
+          </NavLink>
+            
           </div>
         </div>
       )}

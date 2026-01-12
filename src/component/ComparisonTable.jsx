@@ -60,6 +60,7 @@ const ComparisonTable = ({
                         row.values[colIndex]
                       )}
                     </span>
+                    
                   </div>
                 ))}
               </div>

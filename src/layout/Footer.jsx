@@ -5,7 +5,7 @@ import youtubeIcon from "../assets/Footer/youtube.png";
 import ProfitxLogo from "../assets/Footer/ProfitX.png";
 
 import { FaUser, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -30,12 +30,15 @@ const Footer = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
-            <button
+            <NavLink to={"login"}>
+              <button
               onClick={() => navigate("/login")}
               className="h-[48px] px-8 rounded-full bg-[#82F352] font-bold text-black"
             >
               Login
             </button>
+            </NavLink>
+            
 
             <a
               href="https://discord.gg/"
