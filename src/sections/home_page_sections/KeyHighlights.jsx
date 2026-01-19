@@ -1,29 +1,24 @@
 import growthLogo from "../../assets/images/growthlogo.png";
 
-// Static content config
 const CARDS = [
   {
     title: "Extra 20% Profit Share in challenge phase",
-    desc:
-      "Profitxfunded is the only proprietary trading firm that provides a 20% profit share from the Challenge Phase profits, allowing you to start earning right away.",
+    desc: "Profitxfunded is the only proprietary trading firm that provides a 20% profit share from the Challenge Phase profits, allowing you to start earning right away.",
     highlighted: false,
   },
   {
     title: "New Trading",
-    desc:
-      "Profitxfunded permits news trading, enabling you to capitalize on significant market shifts triggered by high-impact news announcements.",
+    desc: "Profitxfunded permits news trading, enabling you to capitalize on significant market shifts triggered by high-impact news announcements.",
     highlighted: true,
   },
   {
     title: "24/7 Support",
-    desc:
-      "Our customer support team is available 24/7 to assist you, with an average response time of just 60 seconds.",
+    desc: "Our customer support team is available 24/7 to assist you, with an average response time of just 60 seconds.",
     highlighted: false,
   },
   {
     title: "No Time Limit",
-    desc:
-      "There is no time limit to complete the challenges, allowing you to trade at your own pace.",
+    desc: "There is no time limit to complete the challenges, allowing you to trade at your own pace.",
     highlighted: false,
   },
 ];
@@ -31,102 +26,93 @@ const CARDS = [
 const Card = ({ title, desc, highlighted }) => (
   <div
     className={`
-      w-full sm:max-w-[302px]
+      w-full h-full
       rounded-[20px]
+      p-5 sm:p-6
+      flex flex-col gap-3
+      transition-all duration-300 hover:shadow-lg hover:-translate-y-1
       ${highlighted ? "bg-[#82F352]" : "bg-white"}
     `}
   >
-    <div
-      className="
-        p-[16px] sm:p-[15px]
-        flex flex-col gap-[12px]
-      "
-    >
-      <img
-        src={growthLogo}
-        alt="growth"
-        className="w-[28px] h-[28px] sm:w-[30px] sm:h-[30px]"
-      />
+    <img
+      src={growthLogo}
+      alt="growth"
+      className="w-[28px] h-[28px] sm:w-[30px] sm:h-[30px] object-contain"
+    />
 
-      <div className="flex flex-col gap-[8px]">
-        <h4
-          className="
-            text-[16px] sm:text-[18px]
-            font-bold font-font-helvetica
-            text-black
-            leading-[22px]
-            line-clamp-2
-          "
-        >
-          {title}
-        </h4>
+    <div className="flex flex-col gap-2">
+      <h4
+        className="
+          text-[16px] sm:text-[18px]
+          font-bold font-font-helvetica
+          text-black
+          leading-[22px]
+          line-clamp-2
+        "
+      >
+        {title}
+      </h4>
 
-        <p
-          className="
-            text-[13px]
-            font-normal font-font-helvetica
-            text-black
-            leading-[18px]
-          "
-        >
-          {desc}
-        </p>
-      </div>
+      <p
+        className="
+          text-[13px] sm:text-[14px]
+          font-normal font-font-helvetica
+          text-black
+          leading-[18px] sm:leading-[20px]
+          opacity-90
+        "
+      >
+        {desc}
+      </p>
     </div>
   </div>
 );
 
 const KeyHighlights = () => {
   return (
-    <section className="w-full flex justify-center bg-black py-16 md:py-24">
-      {/* Layout wrapper */}
+    <section
+      id="key-highlights"
+      className="w-full bg-black py-16 md:py-24 px-4 sm:px-6 md:px-8 flex justify-center"
+    >
       <div
         className="
           w-full max-w-[1306px]
-          flex flex-col lg:flex-row
-          gap-12 lg:gap-0
-          justify-between
-          px-4 md:px-0
+          grid grid-cols-1 lg:grid-cols-2
+          gap-10 lg:gap-16
+          items-stretch
         "
       >
-        {/* Visual placeholder */}
         <div
           className="
-            w-full lg:w-[643px]
-            h-[240px] sm:h-[320px] lg:h-[608px]
+            w-full
+            min-h-[260px] sm:min-h-[380px]
             rounded-[30px] lg:rounded-[40px]
             bg-[#D9D9D9]
+            shadow-xl
           "
         />
 
-        {/* Content */}
-        <div
-          className="
-            w-full lg:w-[625px]
-            flex flex-col
-            gap-[28px] lg:gap-[40px]
-          "
-        >
-          {/* Header */}
-          <div className="flex flex-col gap-[20px] lg:gap-[25px]">
+        <div className="w-full h-full flex flex-col gap-8 lg:gap-10">
+          <div className="flex flex-col gap-5 items-start">
             <div
               className="
                 w-fit
-                px-[18px] py-[14px]
+                px-[18px] py-[12px]
                 rounded-[30px]
                 bg-[#1520104D]
                 border border-[rgba(130,243,82,0.35)]
+                backdrop-blur-sm
               "
             >
-              <span className="text-[18px] md:text-[19px] text-[#82F352] font-font-helvetica">
+              <span className="text-[16px] md:text-[19px] text-[#82F352] font-font-helvetica font-medium">
                 Key Highlights
               </span>
             </div>
 
             <h2
               className="
-                text-[26px] sm:text-[30px] md:text-[32px]
-                leading-[34px] md:leading-[36px]
+                text-[28px] sm:text-[32px] md:text-[38px]
+                leading-[1.2]
                 font-bold font-font-helvetica
                 text-white
               "
@@ -137,19 +123,10 @@ const KeyHighlights = () => {
             </h2>
           </div>
 
-          {/* Cards grid */}
-          <div className="flex flex-col gap-[20px]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px]">
-              {CARDS.slice(0, 2).map((c) => (
-                <Card key={c.title} {...c} />
-              ))}
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px]">
-              {CARDS.slice(2).map((c) => (
-                <Card key={c.title} {...c} />
-              ))}
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
+            {CARDS.map((card, index) => (
+              <Card key={index} {...card} />
+            ))}
           </div>
         </div>
       </div>

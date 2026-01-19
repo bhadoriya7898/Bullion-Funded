@@ -29,26 +29,25 @@ const STEPS = [
 const HowItsWork = () => {
   return (
     <section className="relative w-full flex justify-center bg-black py-16 md:py-24 overflow-hidden">
-
       {/* ================= BACKGROUND IMAGE ================= */}
       <img
-        src={bgImage}
-        alt=""
-        className="
-          absolute top-0 left-1/2 -translate-x-1/2
-          w-[900px] md:w-[1100px] lg:w-[1305px]
-          h-auto
-          opacity-10
-          pointer-events-none
-        "
-      />
+  src={bgImage}
+  alt=""
+  className="
+    absolute top-1/2 left-1/2
+    -translate-x-1/2 -translate-y-1/2
+    w-[900px] md:w-[1100px] lg:w-[1305px]
+    mix-blend-screen
+    opacity-100
+    z-0
+    pointer-events-none
+  "
+/>
 
       {/* ================= MAIN CONTENT ================= */}
-      <div className="relative w-full max-w-[1306px] flex flex-col gap-[60px] md:gap-[80px] px-4 md:px-0">
-
+      <div className="relative z-10 w-full max-w-[1306px] flex flex-col gap-[60px] md:gap-[80px] px-4 md:px-0">
         {/* ================= HEADER ================= */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-
           <div className="max-w-[597px] flex flex-col gap-[14px] md:gap-[19px]">
             <span className="text-[18px] md:text-[19px] font-font-helvetica text-white">
               How its Work
@@ -67,11 +66,13 @@ const HowItsWork = () => {
           </div>
 
           {/* DESKTOP CTA */}
-          <button className="hidden lg:flex items-center gap-[10px]
-                             px-[20px] py-[15px]
-                             rounded-[40px]
-                             bg-[#82F352]
-                             text-[18px] font-bold font-font-helvetica text-black">
+          <button
+            className="hidden lg:flex items-center gap-[10px]
+                       px-[20px] py-[15px]
+                       rounded-[40px]
+                       bg-[#82F352]
+                       text-[18px] font-bold font-font-helvetica text-black"
+          >
             Start a Challenge
             <img src={arrowRight} alt="" className="w-[26px]" />
           </button>
@@ -92,7 +93,6 @@ const HowItsWork = () => {
         >
           {STEPS.map((step, idx) => (
             <div key={idx} className="flex flex-col gap-[14px] md:gap-[20px]">
-
               <span className="text-[18px] md:text-[20px] font-bold font-font-helvetica text-white">
                 {step.step}
               </span>
@@ -110,11 +110,13 @@ const HowItsWork = () => {
 
         {/* ================= MOBILE CTA ================= */}
         <div className="flex justify-center lg:hidden">
-          <button className="flex items-center gap-[10px]
-                             px-[24px] py-[15px]
-                             rounded-[40px]
-                             bg-[#82F352]
-                             text-[18px] font-bold font-font-helvetica text-black">
+          <button
+            className="flex items-center gap-[10px]
+                       px-[24px] py-[15px]
+                       rounded-[40px]
+                       bg-[#82F352]
+                       text-[18px] font-bold font-font-helvetica text-black"
+          >
             Start a Challenge
             <img src={arrowRight} alt="" className="w-[26px]" />
           </button>

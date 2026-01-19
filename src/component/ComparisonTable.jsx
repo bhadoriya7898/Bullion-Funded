@@ -74,7 +74,7 @@ const ComparisonTable = ({
       <div className="hidden md:block w-full overflow-x-auto px-3 sm:px-0">
         <div className="mx-auto max-w-[1240px]">
 
-          <div className="min-w-[1100px] rounded-[24px] overflow-hidden border-[2px] border-black bg-[#090909]">
+          <div className="min-w-[1100px] overflow-hidden border-[2px] border-black bg-[#090909]">
 
             {/* TOP RIGHT TEXT */}
             <div className="w-full flex justify-end pr-4 py-2">

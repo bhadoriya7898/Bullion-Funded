@@ -266,9 +266,10 @@ const XChallenge = () => {
           </p>
 
           <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-14
-                          max-w-[1100px] mx-auto place-items-center"
-          >
+  className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-6 mt-12
+             max-w-[1000px] mx-auto place-items-center"
+>
+
             {rules.map((rule, i) => (
               <div
                 key={i}

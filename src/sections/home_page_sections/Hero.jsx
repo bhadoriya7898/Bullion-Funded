@@ -145,26 +145,40 @@ const Hero = () => {
 
           {/* SCROLL DOWN */}
           <div className="mt-6 flex justify-center">
-            <div className="flex items-center gap-[12px]">
-              <span className="text-[16px] md:text-[18px] font-bold">
-                Scroll Down
-              </span>
-              <div
-                className="
-                  w-[34px] h-[34px] md:w-[39px] md:h-[39px]
-                  rounded-full
-                  bg-[#82F3521A]
-                  flex items-center justify-center
-                "
-              >
-                <img
-                  src={arrowUp}
-                  alt="scroll"
-                  className="w-[16px] md:w-[20px] h-[16px] md:h-[20px]"
-                />
-              </div>
-            </div>
-          </div>
+  <div
+    onClick={() =>
+      document
+        .getElementById("key-highlights")
+        ?.scrollIntoView({ behavior: "smooth" })
+    }
+    className="
+      flex items-center gap-[12px]
+      cursor-pointer
+      hover:translate-y-1
+      transition-all duration-300
+    "
+  >
+    <span className="text-[16px] md:text-[18px] font-bold">
+      Scroll Down
+    </span>
+
+    <div
+      className="
+        w-[34px] h-[34px] md:w-[39px] md:h-[39px]
+        rounded-full
+        bg-[#82F3521A]
+        flex items-center justify-center
+      "
+    >
+      <img
+        src={arrowUp}
+        alt="scroll"
+        className="w-[16px] md:w-[20px]"
+      />
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
     </section>

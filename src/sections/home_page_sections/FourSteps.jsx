@@ -61,8 +61,6 @@ const stepsData = [
 const FourSteps = () => {
   return (
     <section className="w-full bg-[#090909] py-24 flex flex-col items-center gap-16">
-      
-      {/* ================= HEADING ================= */}
       <div className="max-w-[610px] flex flex-col gap-[19px] text-center px-4">
         <h2 className="text-white text-[32px] font-bold leading-tight">
           You’re <span className="text-[#82F352]">four steps</span> away from
@@ -74,7 +72,6 @@ const FourSteps = () => {
         </p>
       </div>
 
-      {/* ================= CARDS ================= */}
       <div className="w-full max-w-[1300px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6">
         {stepsData.map((item, index) => (
           <div
@@ -84,20 +81,12 @@ const FourSteps = () => {
               transition-all duration-300 ease-out
               ${
                 item.highlight
-                  ? "bg-[#82F352] shadow-[0_0_40px_rgba(130,243,82,0.25)] hover:scale-[1.015] animate-[softGlow_4s_ease-in-out_infinite]"
+                  ? "bg-[#82F352] shadow-[0_0_40px_rgba(130,243,82,0.25)] hover:scale-[1.015]"
                   : "bg-white hover:scale-[1.01]"
               }
             `}
           >
-            {/* ================= CONTENT ================= */}
-            <div
-              className="flex-1 p-5 flex flex-col gap-4 rounded-[16px]"
-              // style={{
-              //   border: "0.5px solid",
-              //   borderImage:
-              //     "linear-gradient(90deg, #FFFFFF 0%, #000000 50%, #FFFFFF 100%) 1",
-              // }}
-            >
+            <div className="flex-1 p-5 flex flex-col gap-4 rounded-[16px]">
               <img src={item.icon} alt={item.title} className="w-[49px] h-[49px]" />
 
               <h3 className="text-black text-[20px] font-medium">
@@ -108,34 +97,23 @@ const FourSteps = () => {
                 {item.desc}
               </p>
 
-              <div
-                className="w-full h-[0.5px]"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FFFFFF 0%, #000000 50%, #FFFFFF 100%)",
-                }}
-              />
-
+<div className="w-full h-[1px] bg-gradient-to-r from-black/10 via-black/40 to-black/10" />
               <ul className="flex flex-col gap-[10px]">
                 {item.points.map((point, i) => (
-                  <li
-                    key={i}
-                    className="text-black text-[14px]"
-                  >
+                  <li key={i} className="text-black text-[14px]">
                     • {point}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* ================= BUTTON (FIXED BOTTOM) ================= */}
             <button
               className={`
                 mt-auto h-[36px] rounded-[10px] text-[14px] font-medium
                 transition-all duration-300
                 ${
                   item.highlight
-                    ? "bg-white text-black hover:bg-black hover:text-white"
+                    ? "bg-white text-black hover:bg-[#6fd63c] hover:text-white"
                     : "bg-[#82F352] text-black hover:bg-[#6fd63c]"
                 }
               `}
