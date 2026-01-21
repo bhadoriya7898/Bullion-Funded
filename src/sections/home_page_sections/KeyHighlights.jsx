@@ -1,4 +1,5 @@
 import growthLogo from "../../assets/images/growthlogo.png";
+import GrowthImg from "../../assets/images/Growth.jpg";
 
 const CARDS = [
   {
@@ -82,16 +83,24 @@ const KeyHighlights = () => {
           items-stretch
         "
       >
+        {/* IMAGE SECTION (FIXED) */}
         <div
           className="
             w-full
             min-h-[260px] sm:min-h-[380px]
             rounded-[30px] lg:rounded-[40px]
-            bg-[#D9D9D9]
             shadow-xl
+            overflow-hidden
           "
-        />
+        >
+          <img
+            src={GrowthImg}
+            alt="Growth"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
+        {/* CONTENT SECTION */}
         <div className="w-full h-full flex flex-col gap-8 lg:gap-10">
           <div className="flex flex-col gap-5 items-start">
             <div

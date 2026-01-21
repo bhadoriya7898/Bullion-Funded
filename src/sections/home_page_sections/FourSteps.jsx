@@ -1,11 +1,13 @@
-import step1 from "../../assets/images/step1.png";
-import step2 from "../../assets/images/step2.png";
-import step3 from "../../assets/images/step3.png";
-import step4 from "../../assets/images/step4.png";
+import {
+  FiTrendingUp,
+  FiBarChart2,
+  FiZap,
+  FiShield,
+} from "react-icons/fi";
 
 const stepsData = [
   {
-    icon: step1,
+    icon: <FiTrendingUp />,
     title: "X-Challenge",
     desc: "The most popular package amongst FundedNext traders",
     points: [
@@ -18,7 +20,7 @@ const stepsData = [
     highlight: false,
   },
   {
-    icon: step2,
+    icon: <FiBarChart2 />,
     title: "Evaluation",
     desc: "The most affordable package for new and upcoming traders",
     points: [
@@ -31,7 +33,7 @@ const stepsData = [
     highlight: true,
   },
   {
-    icon: step3,
+    icon: <FiZap />,
     title: "Express",
     desc: "The only package that offers free retakes",
     points: [
@@ -44,7 +46,7 @@ const stepsData = [
     highlight: false,
   },
   {
-    icon: step4,
+    icon: <FiShield />,
     title: "X-Lite Challenge",
     desc: "The package offers profit shares without needing 5% growth",
     points: [
@@ -87,7 +89,20 @@ const FourSteps = () => {
             `}
           >
             <div className="flex-1 p-5 flex flex-col gap-4 rounded-[16px]">
-              <img src={item.icon} alt={item.title} className="w-[49px] h-[49px]" />
+              {/* ICON */}
+              <div
+                className={`
+                  w-[50px] h-[50px] rounded-[12px]
+                  flex items-center justify-center text-[26px]
+                  ${
+                    item.highlight
+                      ? "bg-black/10 text-black"
+                      : "bg-[#82F352]/20 text-black"
+                  }
+                `}
+              >
+                {item.icon}
+              </div>
 
               <h3 className="text-black text-[20px] font-medium">
                 {item.title}
@@ -97,7 +112,8 @@ const FourSteps = () => {
                 {item.desc}
               </p>
 
-<div className="w-full h-[1px] bg-gradient-to-r from-black/10 via-black/40 to-black/10" />
+              <div className="w-full h-[1px] bg-gradient-to-r from-black/10 via-black/40 to-black/10" />
+
               <ul className="flex flex-col gap-[10px]">
                 {item.points.map((point, i) => (
                   <li key={i} className="text-black text-[14px]">

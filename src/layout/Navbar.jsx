@@ -25,14 +25,16 @@ const Navbar = () => {
   return (
     <header className="w-full flex justify-center pt-5 relative z-50">
       <nav className="w-full max-w-[1307px] h-[58px] flex items-center justify-between px-4 lg:px-0">
+        {/* LOGO */}
         <Link to="/">
           <img
             src={logo}
             alt="Profitx Founded"
-            className="h-[36px] md:h-[45px] object-contain cursor-pointer"
+            className="h-[36px] md:h-[45px] object-contain"
           />
         </Link>
 
+        {/* DESKTOP MENU */}
         <div className="hidden lg:flex items-center gap-[85px]">
           <div
             className="relative flex items-center gap-2 px-[22px] py-[15px]
@@ -44,7 +46,7 @@ const Navbar = () => {
               className="absolute top-1/2 left-1/2
                          -translate-x-1/2 -translate-y-1/2
                          w-[260px] h-[120px]
-                         rounded-full pointer-events-none z-0"
+                         rounded-full pointer-events-none"
               style={{
                 background:
                   "radial-gradient(ellipse at center, rgba(130,243,82,0.4) 0%, rgba(130,243,82,0.22) 35%, rgba(130,243,82,0.08) 55%, transparent 70%)",
@@ -61,12 +63,8 @@ const Navbar = () => {
                     key={item.name}
                     to={item.path}
                     className={({ isActive }) =>
-                      `px-[10px] py-[5px] rounded-md text-[18px] font-medium transition-all
-                      ${
-                        isActive || isModels
-                          ? "text-[#82F352]"
-                          : "text-white"
-                      }`
+                      `px-[10px] py-[5px] rounded-md text-[18px] font-medium transition
+                      ${isActive || isModels ? "text-[#82F352]" : "text-white"}`
                     }
                   >
                     {item.name}
@@ -77,6 +75,7 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* DESKTOP BUTTONS */}
         <div className="hidden lg:flex items-center gap-[15px]">
           <button
             className="flex items-center gap-2 h-[48px] px-[20px]
@@ -98,20 +97,30 @@ const Navbar = () => {
           </NavLink>
         </div>
 
+        {/* MOBILE MENU ICON */}
         <button
-          onClick={() => setOpen(!open)}
-          className="lg:hidden text-white text-[28px]"
+          onClick={() => setOpen(true)}
+          className="lg:hidden text-white text-[30px]"
         >
-          {open ? <FiX /> : <FiMenu />}
+          <FiMenu />
         </button>
       </nav>
 
-      {open && (
-        <div
-          className="lg:hidden absolute top-[80px] left-0 w-full
-                     bg-black/95 backdrop-blur-md
-                     py-6 px-6 flex flex-col gap-6"
+      {/* MOBILE FULLSCREEN MENU */}
+      <div
+        className={`lg:hidden fixed inset-0 bg-black/95 backdrop-blur-md
+                    transition-transform duration-300
+                    ${open ? "translate-y-0" : "-translate-y-full"}`}
+      >
+        {/* CLOSE BUTTON */}
+        <button
+          onClick={() => setOpen(false)}
+          className="absolute top-6 right-6 text-white text-[36px]"
         >
+          <FiX />
+        </button>
+
+        <div className="h-full flex flex-col justify-center items-center gap-8">
           {navLinks.map((item) => {
             const isModels =
               item.name === "Models" && isModelRoute;
@@ -122,12 +131,8 @@ const Navbar = () => {
                 to={item.path}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `text-[18px] font-medium
-                  ${
-                    isActive || isModels
-                      ? "text-[#82F352]"
-                      : "text-white"
-                  }`
+                  `text-[22px] font-semibold transition
+                  ${isActive || isModels ? "text-[#82F352]" : "text-white"}`
                 }
               >
                 {item.name}
@@ -135,9 +140,9 @@ const Navbar = () => {
             );
           })}
 
-          <div className="flex flex-col gap-4 pt-4 border-t border-white/20">
+          <div className="flex flex-col gap-4 w-[80%] mt-6">
             <button
-              className="h-[48px] rounded-[10px]
+              className="h-[50px] rounded-[12px]
                          bg-[#82F352] text-[18px]
                          font-bold text-[#090909]"
             >
@@ -146,7 +151,7 @@ const Navbar = () => {
 
             <NavLink to="login" onClick={() => setOpen(false)}>
               <button
-                className="h-[48px] rounded-[10px]
+                className="h-[50px] w-full rounded-[12px]
                            bg-[#82F3520D]
                            text-[18px] font-bold text-[#82F352]"
               >
@@ -155,7 +160,7 @@ const Navbar = () => {
             </NavLink>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };
