@@ -3,6 +3,7 @@ const EvaluationRuleCard = ({ icon, title, description }) => {
   return (
     <div
       className="
+        group
         w-full
         max-w-[340px] sm:max-w-[380px] xl:max-w-[400px]
         h-[260px] sm:h-[269px]
@@ -12,6 +13,10 @@ const EvaluationRuleCard = ({ icon, title, description }) => {
         pb-[18px] sm:pb-[21px]
         pl-[18px] sm:pl-[21px]
         flex items-center justify-center
+        transition-all duration-300
+        hover:bg-[#82F352]
+        hover:-translate-y-1
+        hover:shadow-[0_12px_40px_rgba(130,243,82,0.45)]
       "
     >
       {/* Inner Frame */}
@@ -25,11 +30,20 @@ const EvaluationRuleCard = ({ icon, title, description }) => {
         "
       >
         {/* Icon */}
-        <img
-          src={icon}
-          alt={title}
-          className="w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] object-contain"
-        />
+        <div
+          className="
+            w-[56px] h-[56px]
+            flex items-center justify-center
+            rounded-[12px]
+            text-[32px]
+            bg-[#82F352]/20
+            text-black
+            transition-all duration-300
+            group-hover:bg-white/20
+          "
+        >
+          {icon}
+        </div>
 
         {/* Title */}
         <h3

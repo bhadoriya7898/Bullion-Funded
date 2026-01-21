@@ -58,7 +58,7 @@ const ChallengeComparison = () => {
 
         {/* ================= PLAN SELECTOR ================= */}
         <div className="w-full max-w-[700px] overflow-x-auto">
-          <div className="relative min-w-max h-[45px] bg-[#82F352] rounded-[44px] flex items-center px-15">
+          <div className="relative min-w-max h-[45px] bg-[#82F352] rounded-[44px] flex items-center px-6">
             <div ref={tabsWrapperRef} className="relative flex">
 
               <div

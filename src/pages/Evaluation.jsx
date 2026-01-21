@@ -1,6 +1,23 @@
 import { useNavigate } from "react-router-dom";
 import ComparisonTable from "../component/ComparisonTable";
 import { useLocation } from "react-router-dom";
+import {
+  FiTrendingUp,
+  FiDollarSign,
+  FiClock,
+  FiRepeat,
+  FiPercent,
+  FiCalendar,
+} from "react-icons/fi";
+
+import {
+  
+  FiHeadphones,
+  FiRefreshCw,
+  FiZap,
+  FiBarChart2,
+  FiActivity,
+} from "react-icons/fi";
 
 import graphVideo from "../assets/videos/x-challemge-graph.mp4";
 import rulesBg from "../assets/images/x-challenge-bg.png";
@@ -19,39 +36,56 @@ const Evaluation = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
+  const evaluationIcons = [
+  FiTrendingUp,   // Trade with up to $200K
+  FiDollarSign,   // 20% Profit Share
+  FiClock,        // 14 Day Extension
+  FiRepeat,       // Unlimited Free Retakes
+  FiPercent,     // Up to 90% Profit Sharing
+  FiCalendar,    // Weekend Holding
+];
+
+  const whyChooseIcons = [
+  FiTrendingUp,   // Trade with up to $200K
+  FiHeadphones,   // Pro Support
+  FiRefreshCw,    // Reset Top-up
+  FiZap,          // Fastest Reward
+  FiBarChart2,    // Trader-Friendly Leverage
+  FiActivity,     // Best Trading Condition
+];
   const rules = [
     {
-      icon: card1,
+      
       title: "Trade with up to $200K",
       description:
         "We win when you win. To increase your chances of profitability, we are offering you up to $200,000 funds in our Evaluation model.",
     },
     {
-      icon: card2,
+      
       title: "20% Profit Share from the Challenge Phase",
       description:
         "In the Evaluation model, you can get 20% profit during each assessment phase. So you can start earning a profit share as a reward even when you’re trading the  Challenge account.",
     },
     {
-      icon: card3,
+     
       title: "14 Day Extension",
       description:
         "If you are in profit but can not meet your phase-01 target, no worries. As long as you are profitable by following all rules, you will be given an additional 14 days to complete your challenge.",
     },
     {
-      icon: card4,
+     
       title: "Unlimited Free Retakes",
       description:
         "Don’t worry if you are in profit but cannot achieve your target within a trading cycle while following the rules. We will provide you with unlimited retakes without any additional charge. All you have to do is to be profitable without violating any rules.",
     },
     {
-      icon: card5,
+      
       title: "Up to 90% Profit Sharing",
       description:
         "After getting the Profitx Funded Account, you start with an 80% profit split to begin with. And when you become eligible for the scale-up plan, your profit share will increase to 90%.",
     },
     {
-      icon: card6,
+      
       title: "Weekend Holding",
       description:
         "You don't have to miss any big market movement. Hold your trade as long as you want, even during the weekends. Whatever your trading style is (Scalp, Intraday, or Swing trading), this is perfect option for you.",
@@ -252,14 +286,19 @@ const Evaluation = () => {
       place-items-center
     "
             >
-              {rules.map((rule, i) => (
-                <EvaluationRuleCard
-                  key={i}
-                  icon={rule.icon}
-                  title={rule.title}
-                  description={rule.description}
-                />
-              ))}
+             {rules.map((rule, i) => {
+  const Icon = evaluationIcons[i];
+
+  return (
+    <EvaluationRuleCard
+      key={i}
+      icon={<Icon />}
+      title={rule.title}
+      description={rule.description}
+    />
+  );
+})}
+
             </div>
           </div>
         </div>
@@ -319,23 +358,23 @@ const Evaluation = () => {
         </div>
       </section>
 
-      <section
-        className="relative mt-[40px] sm:mt-[80px] bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${rewardBg})`,
-          transform: "rotate(180deg)",
-        }}
-      >
-        {/* rotate content back */}
-        <div className="transform rotate-180 max-w-[1240px] mx-auto px-4 py-20 sm:py-28">
-          {/* HEADING */}
-          <h2 className="text-right text-[24px] sm:text-[36px] lg:text-[42px] font-bold mb-14">
-            Why Choose Profitx Funded <br /> as Your Prop Firm?
-          </h2>
+    <section
+  className="relative mt-[40px] sm:mt-[80px] bg-cover bg-center"
+  style={{
+    backgroundImage: `url(${rewardBg})`,
+    transform: "rotate(180deg)",
+  }}
+>
+  {/* rotate content back */}
+  <div className="transform rotate-180 max-w-[1240px] mx-auto px-4 py-20 sm:py-28">
+    {/* HEADING */}
+    <h2 className="text-right text-[24px] sm:text-[36px] lg:text-[42px] font-bold mb-14">
+      Why Choose Profitx Funded <br /> as Your Prop Firm?
+    </h2>
 
-          {/* CARDS GRID — RESPONSIVE WIDTH */}
-          <div
-            className="
+    {/* CARDS GRID — RESPONSIVE WIDTH */}
+    <div
+      className="
         grid
         grid-cols-1
         md:grid-cols-2
@@ -344,45 +383,48 @@ const Evaluation = () => {
         gap-y-[40px]
         place-items-center
       "
-          >
-            {[
-              { icon: card1, title: "Trade with up to $200K" },
-              { icon: card2, title: "Profitx Funded Pro Support" },
-              { icon: card3, title: "Reset Top-up" },
-              { icon: card4, title: "Fastest Reward" },
-              { icon: card5, title: "Trader-Friendly Leverage" },
-              { icon: card6, title: "Best Trading Condition" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="
-            w-full
-            max-w-[340px] sm:max-w-[380px] xl:max-w-[400px]
-            h-[260px] sm:h-[269px]
-            bg-[#1F3B16]/90
-            rounded-[10px]
-            flex flex-col items-center justify-center
-            gap-[20px] sm:gap-[24px]
-            text-center
-            shadow-[0_0_60px_rgba(130,243,82,0.08)]
-          "
-              >
-                {/* ICON */}
-                <img
-                  src={item.icon}
-                  alt=""
-                  className="w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] object-contain"
-                />
+    >
+      {[
+        { title: "Trade with up to $200K" },
+        { title: "Profitx Funded Pro Support" },
+        { title: "Reset Top-up" },
+        { title: "Fastest Reward" },
+        { title: "Trader-Friendly Leverage" },
+        { title: "Best Trading Condition" },
+      ].map((item, i) => {
+        const Icon = whyChooseIcons[i];
 
-                {/* TITLE */}
-                <h4 className="text-[18px] sm:text-[20px] font-semibold">
-                  {item.title}
-                </h4>
-              </div>
-            ))}
+        return (
+          <div
+            key={i}
+            className="
+              w-full
+              max-w-[340px] sm:max-w-[380px] xl:max-w-[400px]
+              h-[260px] sm:h-[269px]
+              bg-[#1F3B16]/90
+              rounded-[10px]
+              flex flex-col items-center justify-center
+              gap-[20px] sm:gap-[24px]
+              text-center
+              shadow-[0_0_60px_rgba(130,243,82,0.08)]
+            "
+          >
+            {/* ICON (react-icons replacement) */}
+            <div className="text-[70px] sm:text-[80px] text-[#82F352]">
+              <Icon />
+            </div>
+
+            {/* TITLE */}
+            <h4 className="text-[18px] sm:text-[20px] font-semibold">
+              {item.title}
+            </h4>
           </div>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
     </main>
   );
 };

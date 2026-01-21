@@ -1,45 +1,63 @@
-import growthLogo from "../../assets/images/growthlogo.png";
+import {
+  FiDollarSign,
+  FiActivity,
+  FiHeadphones,
+  FiClock,
+} from "react-icons/fi";
 import GrowthImg from "../../assets/images/Growth.jpg";
 
 const CARDS = [
   {
+    icon: <FiDollarSign />,
     title: "Extra 20% Profit Share in challenge phase",
     desc: "Profitxfunded is the only proprietary trading firm that provides a 20% profit share from the Challenge Phase profits, allowing you to start earning right away.",
-    highlighted: false,
   },
   {
+    icon: <FiActivity />,
     title: "New Trading",
     desc: "Profitxfunded permits news trading, enabling you to capitalize on significant market shifts triggered by high-impact news announcements.",
-    highlighted: true,
   },
   {
+    icon: <FiHeadphones />,
     title: "24/7 Support",
     desc: "Our customer support team is available 24/7 to assist you, with an average response time of just 60 seconds.",
-    highlighted: false,
   },
   {
+    icon: <FiClock />,
     title: "No Time Limit",
     desc: "There is no time limit to complete the challenges, allowing you to trade at your own pace.",
-    highlighted: false,
   },
 ];
 
-const Card = ({ title, desc, highlighted }) => (
+const Card = ({ icon, title, desc }) => (
   <div
-    className={`
+    className="
+      group
       w-full h-full
       rounded-[20px]
       p-5 sm:p-6
       flex flex-col gap-3
-      transition-all duration-300 hover:shadow-lg hover:-translate-y-1
-      ${highlighted ? "bg-[#82F352]" : "bg-white"}
-    `}
+      bg-white
+      transition-all duration-300
+      hover:bg-[#82F352]
+      hover:shadow-lg hover:-translate-y-1
+    "
   >
-    <img
-      src={growthLogo}
-      alt="growth"
-      className="w-[28px] h-[28px] sm:w-[30px] sm:h-[30px] object-contain"
-    />
+    {/* ICON */}
+    <div
+      className="
+        w-[32px] h-[32px]
+        rounded-[8px]
+        flex items-center justify-center
+        text-[18px]
+        bg-[#82F352]/20 text-black
+        transition-colors duration-300
+        group-hover:bg-white/20
+        group-hover:text-black
+      "
+    >
+      {icon}
+    </div>
 
     <div className="flex flex-col gap-2">
       <h4
@@ -83,7 +101,7 @@ const KeyHighlights = () => {
           items-stretch
         "
       >
-        {/* IMAGE SECTION (FIXED) */}
+        {/* IMAGE SECTION */}
         <div
           className="
             w-full
@@ -113,7 +131,7 @@ const KeyHighlights = () => {
                 backdrop-blur-sm
               "
             >
-              <span className="text-[16px] md:text-[19px] text-[#82F352] font-font-helvetica font-medium">
+              <span className="text-[16px] md:text-[19px] text-[#f8fff6] font-font-helvetica font-medium">
                 Key Highlights
               </span>
             </div>

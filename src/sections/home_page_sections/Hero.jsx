@@ -113,7 +113,7 @@ const Hero = () => {
                   rounded-[10px]
                   bg-[#82F3520D]
                   text-[16px] md:text-[18px]
-                  font-semibold text-[#82F352]
+                  font-semibold text-[#e7ede5]
                 "
               >
                 Join our Telegram

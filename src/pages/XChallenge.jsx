@@ -1,5 +1,13 @@
 import { useState, useRef, useLayoutEffect } from "react";
 import ComparisonTable from "../component/ComparisonTable";
+import {
+  FiShield,
+  FiTrendingUp,
+  FiClock,
+  FiAlertTriangle,
+  FiBarChart2,
+  FiDollarSign,
+} from "react-icons/fi";
 
 import graphVideo from "../assets/videos/x-challemge-graph.mp4";
 import rulesBg from "../assets/images/x-challenge-bg.png";
@@ -44,24 +52,31 @@ const XChallenge = () => {
   /* ---------------------------------------------
      Rule cards shown under “Model Rules”
   --------------------------------------------- */
+  const ruleIcons = [
+  FiShield,
+  FiTrendingUp,
+  FiClock,
+  FiAlertTriangle,
+  FiBarChart2,
+  FiDollarSign,
+];
   const rules = [
     {
-      icon: rule1,
       title: "No Time Limit",
       desc: "Trade with no rush on our Profitxaire Challenges and execute your trading strategies at your own pace.",
     },
     {
-      icon: rule2,
+     
       title: "Fastest Profitx Funded Challenge",
       desc: "Get your Profitx Funded Accounts with only just 2 days of trading with Profitxaire 1-Step and 5 days with Profitxaire 2-Step.",
     },
     {
-      icon: rule3,
+   
       title: "Balance-based Drawdown",
       desc: "Experience absolute freedom and hold your trades tension-free with our drawdowns calculated on your balance.",
     },
     {
-      icon: rule4,
+     
       title: "Up to 95% Profit Share",
       desc: "Keep up to 95% of the profits you make with your Profitx Funded Profitxaire 1-Step and 2-Step accounts.",
     },
@@ -250,51 +265,79 @@ const XChallenge = () => {
          Why this challenge stands out
       ===================================================== */}
       <section className="relative mt-[120px] sm:mt-[160px]">
-        <img
-          src={rulesBg}
-          alt=""
-          className="absolute inset-0 w-full opacity-40"
-        />
+  <img
+    src={rulesBg}
+    alt=""
+    className="absolute inset-0 w-full opacity-40"
+  />
 
-        <div className="relative max-w-[1240px] mx-auto px-4">
-          <h2 className="text-center text-[28px] sm:text-[36px] lg:text-[50px] font-bold">
-            Profitxaire Challenge Model Rules
-          </h2>
-          <p className="text-center mt-2 text-[13px] sm:text-[16px] lg:text-[18px]">
-            Find out the reasons why the Profitxaire Challenge is the best
-            challenge out there!
-          </p>
+  <div className="relative max-w-[1240px] mx-auto px-4">
+    <h2 className="text-center text-[28px] sm:text-[36px] lg:text-[50px] font-bold">
+      Profitxaire Challenge Model Rules
+    </h2>
 
+    <p className="text-center mt-2 text-[13px] sm:text-[16px] lg:text-[18px]">
+      Find out the reasons why the Profitxaire Challenge is the best
+      challenge out there!
+    </p>
+
+    <div
+      className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-6 mt-12
+                 max-w-[1000px] mx-auto place-items-center"
+    >
+      {rules.map((rule, i) => {
+        const Icon = ruleIcons[i % ruleIcons.length];
+
+        return (
           <div
-  className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-6 mt-12
-             max-w-[1000px] mx-auto place-items-center"
->
-
-            {rules.map((rule, i) => (
+            key={i}
+            className="
+              group
+              bg-white
+              rounded-[11px]
+              max-w-[474px] min-h-[167px]
+              px-[30px] py-[28px]
+              flex items-center
+              transition-all duration-300
+              hover:bg-[#82F352]
+              hover:-translate-y-1
+              hover:shadow-[0_12px_40px_rgba(130,243,82,0.45)]
+            "
+          >
+            <div className="flex gap-[30px] w-full">
+              {/* ICON (react-icons, content untouched) */}
               <div
-                key={i}
-                className="bg-white rounded-[11px]
-                           max-w-[474px] min-h-[167px]
-                           px-[30px] py-[28px]
-                           flex items-center
-                           shadow-[0_8px_30px_rgba(130,243,82,0.25)]"
+                className="
+                  w-[44px] h-[44px]
+                  flex items-center justify-center
+                  rounded-[10px]
+                  bg-[#82F352]/20
+                  text-[22px] text-black
+                  transition-all duration-300
+                  group-hover:bg-white/20
+                "
               >
-                <div className="flex gap-[30px] w-full">
-                  <img src={rule.icon} alt="" className="w-[34px] h-[41px]" />
-                  <div className="flex flex-col gap-[30px] max-w-[330px]">
-                    <h4 className="text-[19.75px] font-bold text-black">
-                      {rule.title}
-                    </h4>
-                    <p className="text-[17.55px] font-medium text-black">
-                      {rule.desc}
-                    </p>
-                  </div>
-                </div>
+                <Icon />
               </div>
-            ))}
+
+              {/* TEXT (UNCHANGED) */}
+              <div className="flex flex-col gap-[30px] max-w-[330px]">
+                <h4 className="text-[19.75px] font-bold text-black">
+                  {rule.title}
+                </h4>
+
+                <p className="text-[17.55px] font-medium text-black">
+                  {rule.desc}
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
 
       {/* =====================================================
          COMPARISON CONTROLS + TABLE
@@ -350,7 +393,7 @@ const XChallenge = () => {
                     ref={(el) => (tabRefs.current["Profitxaire"] = el)}
                     onClick={() => setActivePlan("Profitxaire")}
                     className={`relative z-10 px-5 cursor-pointer text-[16px] sm:text-[18px]
-        ${activePlan === "Profitxaire" ? "text-white" : "text-white/70"}`}
+        ${activePlan === "Profitxaire" ? "text-white" : "text-white"}`}
                   >
                     Profitxaire Challenge
                   </div>
@@ -359,7 +402,7 @@ const XChallenge = () => {
                     ref={(el) => (tabRefs.current["lite"] = el)}
                     onClick={() => setActivePlan("lite")}
                     className={`relative z-10 px-5 cursor-pointer text-[16px] sm:text-[18px]
-        ${activePlan === "lite" ? "text-white" : "text-white/70"}`}
+        ${activePlan === "lite" ? "text-white" : "text-white"}`}
                   >
                     Profitxaire Lite Challenge
                   </div>
@@ -394,7 +437,7 @@ const XChallenge = () => {
               accountSizes={accountSizes}
               fees={fees}
               rows={tableRows}
-            />
+            /> 
 
             {/* FOOT NOTES */}
             <div className="w-full flex justify-center mt-2">

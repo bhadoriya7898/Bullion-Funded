@@ -1,6 +1,21 @@
 import { useNavigate } from "react-router-dom";
 import ComparisonTable from "../component/ComparisonTable";
 import { useLocation } from "react-router-dom";
+import {
+  FiHeadphones,
+  FiRefreshCw,
+  FiBarChart2,
+  FiActivity,
+} from "react-icons/fi";
+
+import {
+  FiZap,
+  FiDollarSign,
+  FiClock,
+  FiRepeat,
+  FiTrendingUp,
+  FiCalendar,
+} from "react-icons/fi";
 
 import graphVideo from "../assets/videos/x-challemge-graph.mp4";
 import rulesBg from "../assets/images/x-challenge-bg.png";
@@ -19,6 +34,25 @@ const Express = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
+
+  const expressIcons = [
+  FiZap,          // Fast execution / Express
+  FiDollarSign,   // Profit related
+  FiClock,        // Time based rule
+  FiRepeat,       // Retakes / cycles
+  FiTrendingUp,   // Growth / scaling
+  FiCalendar,     // Weekend / holding
+];
+
+  const whyChooseIcons = [
+  FiTrendingUp,   // Trade with up to $200K
+  FiHeadphones,   // Profitx Funded Pro Support
+  FiRefreshCw,    // Reset Top-up
+  FiZap,          // Fastest Reward
+  FiBarChart2,    // Trader-Friendly Leverage
+  FiActivity,     // Best Trading Condition
+];
+
   const rules = [
     {
       icon: card1,
@@ -250,14 +284,18 @@ const Express = () => {
       place-items-center
     "
             >
-              {rules.map((rule, i) => (
-                <EvaluationRuleCard
-                  key={i}
-                  icon={rule.icon}
-                  title={rule.title}
-                  description={rule.description}
-                />
-              ))}
+            {rules.map((rule, i) => {
+  const Icon = expressIcons[i];
+
+  return (
+    <EvaluationRuleCard
+      key={i}
+      icon={<Icon />}
+      title={rule.title}
+      description={rule.description}
+    />
+  );
+})}
             </div>
           </div>
         </div>
@@ -366,11 +404,13 @@ const Express = () => {
           "
               >
                 {/* ICON */}
-                <img
-                  src={item.icon}
-                  alt=""
-                  className="w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] object-contain"
-                />
+                <div className="text-[70px] sm:text-[80px] text-[#82F352]">
+  {(() => {
+    const Icon = whyChooseIcons[i];
+    return <Icon />;
+  })()}
+</div>
+
 
                 {/* TITLE */}
                 <h4 className="text-[18px] sm:text-[20px] font-semibold">
